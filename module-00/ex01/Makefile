@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 17:19:07 by marykman          #+#    #+#              #
-#    Updated: 2025/06/08 19:50:03 by marykman         ###   ########.fr        #
+#    Updated: 2025/06/24 17:28:36 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,15 +29,19 @@ RM			:=	@rm -f
 
 # --------------------------------Source files---------------------------------
 
-NAME		:=	megaphone
+NAME		:=	phonebook
 
-SRCS		:=	megaphone.cpp
+INCLUDES	:=	-I./includes
 
-OBJS		:=	${SRCS:.cpp=.o}
+FILES		:=	main.cpp \
+				PhoneBook.cpp
+
+SRCS		:=	$(addprefix srcs/, ${FILES})
+OBJS		:=	$(patsubst srcs%.cpp, objs%.o, ${SRCS})
 
 # -----------------------------------Rules-------------------------------------
 
-%.o:	%.cpp
+objs/%.o:	srcs/%.cpp
 	${CXX} ${CXXFLAGS} ${INCLUDES} -c $< -o $@
 
 $(NAME):	${OBJS}
