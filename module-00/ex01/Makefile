@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 17:19:07 by marykman          #+#    #+#              #
-#    Updated: 2025/06/24 17:28:36 by marykman         ###   ########.fr        #
+#    Updated: 2025/06/24 18:08:44 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ NAME		:=	phonebook
 INCLUDES	:=	-I./includes
 
 FILES		:=	main.cpp \
-				PhoneBook.cpp
+				PhoneBook.cpp \
+				Contact.cpp
 
 SRCS		:=	$(addprefix srcs/, ${FILES})
 OBJS		:=	$(patsubst srcs%.cpp, objs%.o, ${SRCS})
