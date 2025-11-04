@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/08 17:49:20 by marykman          #+#    #+#             */
-/*   Updated: 2025/10/27 21:33:28 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 07:38:38 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 07:44:30 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
+#include "HumanB.hpp"
 
-int	main(int argc, char **argv)
+HumanB::HumanB(std::string name) : _name(name)
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	this->_weapon = NULL;
+}
+
+HumanB::~HumanB(void)
+{
+	
+}
+
+void HumanB::attack(void)
+{
+	if (!this->_weapon)
+		std::cout << this->_name << " has no weapon !" << std::endl;
 	else
-		for (int i = 1; i < argc; i++)
-			for (int j = 0; argv[i][j]; j++)
-				std::cout << (char)toupper(argv[i][j]);
-	std::cout << std::endl;
-	return (0);
+		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
+}
+
+void HumanB::setWeapon(Weapon &weapon)
+{
+	this->_weapon = &weapon;
 }

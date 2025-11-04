@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 05:56:59 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 06:04:16 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-#include <string>
-
-class Contact
+Zombie* newZombie(std::string name)
 {
-	public:
-		Contact(void);
-		~Contact();
+	Zombie	*zombie;
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
-
-		void	display(unsigned int index);
-};
+	zombie = new Zombie();
+	zombie->set_name(name);
+	return (zombie);
+}

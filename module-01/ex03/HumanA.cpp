@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 07:08:58 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 07:33:47 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include <iostream>
+#include "HumanA.hpp"
 
-#include <string>
 
-class Contact
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
 {
-	public:
-		Contact(void);
-		~Contact();
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
+}
 
-		void	display(unsigned int index);
-};
+HumanA::~HumanA(void)
+{
+	
+}
+
+void HumanA::attack(void)
+{
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+}

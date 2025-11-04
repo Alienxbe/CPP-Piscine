@@ -5,35 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:15:03 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:36:58 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 06:40:45 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 06:48:33 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "PhoneBook.hpp"
 
-int main(void)
+int	main(void)
 {
-	PhoneBook	pb;
-	std::string	input;
-	
-	while (true)
-	{
-		if (!std::cin.eof())
-			std::cout << "Enter a command (ADD, SEARCH, EXIT) : ";
-		if (!std::getline(std::cin, input))
-			break ;
+	std::string	str = "HI THIS IS BRAIN";
+	std::string	*stringPTR = &str;
+	std::string	&stringREF = str;
 
-		if (input == "ADD")
-			pb.add_contact();
-		else if (input == "SEARCH")
-			pb.search();
-		else if (input == "EXIT")
-			break ;
-	}
-	if (std::cin.eof())
-		std::cout << std::endl;
-	std::cout << "See you next time !" << std::endl;
+	std::cout << "---- Addresses ----" << std::endl;
+	std::cout << "string    : " << &str << std::endl;
+	std::cout << "pointer   : " << stringPTR << std::endl;
+	std::cout << "reference : " << &stringREF << std::endl;
+
+	std::cout << "----- Values ------" << std::endl;
+	std::cout << "string    : " << str << std::endl;
+	std::cout << "pointer   : " << *stringPTR << std::endl;
+	std::cout << "reference : " << stringREF << std::endl;
+
 	return (0);
 }

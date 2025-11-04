@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 06:06:00 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 06:11:29 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-#include <string>
-
-class Contact
+int main(void)
 {
-	public:
-		Contact(void);
-		~Contact();
+	// Heap Zombie
+	Zombie	*zombie;
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
+	zombie = newZombie("Bob");
+	zombie->announce();
+	delete zombie;
 
-		void	display(unsigned int index);
-};
+	// stack Zombie
+	randomChump("Ronald");
+	return 0;
+}
+

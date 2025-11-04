@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 06:06:00 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 06:25:16 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-#include <string>
-
-class Contact
+int main(void)
 {
-	public:
-		Contact(void);
-		~Contact();
+	int		size;
+	Zombie	*horde;
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
+	size = 5;
+	horde = zombieHorde(size, "Bob");
+	if (!horde)
+		return (1);
+	for (int i = 0; i < size; i++)
+		horde[i].announce();
+	delete [] horde;
+	return (0);
+}
 
-		void	display(unsigned int index);
-};

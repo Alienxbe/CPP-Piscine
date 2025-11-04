@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 07:37:06 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 07:39:21 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
+#include "Weapon.hpp"
 
-class Contact
+class HumanB
 {
+	private:
+		std::string	_name;
+		Weapon		*_weapon;
+		
 	public:
-		Contact(void);
-		~Contact();
+		HumanB(std::string name);
+		~HumanB(void);
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
-
-		void	display(unsigned int index);
+		void	attack(void);
+		void	setWeapon(Weapon &weapon);
 };

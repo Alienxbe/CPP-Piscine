@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 06:51:02 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 07:22:18 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <string>
 
-class Contact
+class Weapon
 {
+	private:
+		std::string	_type;
+
 	public:
-		Contact(void);
-		~Contact();
+		Weapon(std::string type);
+		~Weapon();
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
-
-		void	display(unsigned int index);
+		std::string	const	&getType(void);
+		void				setType(std::string type);
 };
+

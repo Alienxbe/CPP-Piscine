@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 07:52:06 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 08:02:17 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include <iostream>
 
-#include <string>
-
-class Contact
+// ./sed [filename] [s1] [s2]
+int main(int argc, char const *argv[])
 {
-	public:
-		Contact(void);
-		~Contact();
-
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
-
-		void	display(unsigned int index);
-};
+	
+	if (argc != 4)
+	{
+		std::cout << "Wrong argument count" << std::endl;
+		std::cout << "Usage: ./sed <ilename> <s1> <s2>" << std::endl;
+		return (1);
+	}
+	
+	return 0;
+}

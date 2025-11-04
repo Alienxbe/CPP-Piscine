@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 06:15:31 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 06:24:41 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include <string>
-
-class Contact
+#include "Zombie.hpp"
+#include <iostream>
+Zombie	*zombieHorde(int n, std::string name)
 {
-	public:
-		Contact(void);
-		~Contact();
+	Zombie	*horde;
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
-
-		void	display(unsigned int index);
-};
+	if (n < 1)
+		return (NULL);
+	horde = new Zombie[n];
+	for (int i = 0; i < n; i++)
+		horde[i].set_name(name);
+	return (horde);
+}

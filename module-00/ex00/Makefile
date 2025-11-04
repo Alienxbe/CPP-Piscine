@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 17:19:07 by marykman          #+#    #+#              #
-#    Updated: 2025/06/08 19:49:58 by marykman         ###   ########.fr        #
+#    Updated: 2025/11/04 05:17:33 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,17 +39,21 @@ OBJS		:=	${SRCS:.cpp=.o}
 
 %.o:	%.cpp
 	${CXX} ${CXXFLAGS} ${INCLUDES} -c $< -o $@
+	@echo "${PREFIX}Compilation of $<..."
 
 $(NAME):	${OBJS}
 	${CXX} ${CXXFLAGS} ${OBJS} -o $@
+	@echo "${PREFIX}${NAME} compiled!"
 
 all:	${NAME}
 
 clean:
 	${RM} ${OBJS}
+	@echo "${PREFIX}Cleaning objects files..."
 
 fclean:
 	${RM} ${OBJS} ${NAME}
+	@echo "${PREFIX}Cleaning files..."
 
 re:		fclean all
 

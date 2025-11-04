@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 05:54:58 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 06:03:28 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include <iostream>
+#include "Zombie.hpp"
 
-#include <string>
-
-class Contact
+Zombie::Zombie()
 {
-	public:
-		Contact(void);
-		~Contact();
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
+}
 
-		void	display(unsigned int index);
-};
+Zombie::~Zombie()
+{
+	std::cout << "Zombie \"" << this->name << "\" destroyed" << std::endl;
+}
+
+void Zombie::announce(void)
+{
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::set_name(std::string name)
+{
+	this->name = name;
+}

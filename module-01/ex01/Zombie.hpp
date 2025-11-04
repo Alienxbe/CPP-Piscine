@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 03:29:07 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/04 05:52:32 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/04 06:15:13 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 #include <string>
 
-class Contact
+class Zombie
 {
+
+	private:
+		std::string	name;
+
 	public:
-		Contact(void);
-		~Contact();
+		Zombie(void);
+		~Zombie(void);
 
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
-
-		void	display(unsigned int index);
+		void	announce(void);
+		void	set_name(std::string name);
 };
+
+Zombie* zombieHorde(int n, std::string name);
