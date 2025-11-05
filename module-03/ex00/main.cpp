@@ -1,33 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 17:37:15 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/05 18:42:59 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/05 05:16:44 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/05 05:16:45 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include <string>
-
-class Contact
-{
-	private:
-		std::string	first_name,
-					last_name,
-					nickname,
-					phone,
-					darkest_secret;
-
-	public:
-		Contact(void);
-		~Contact();
-
-		void	display_line(unsigned int index);
-		void	display_tab(void);
-		bool	setFields(void);
-};
