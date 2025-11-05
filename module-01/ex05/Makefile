@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 17:19:07 by marykman          #+#    #+#              #
-#    Updated: 2025/11/04 15:38:08 by marykman         ###   ########.fr        #
+#    Updated: 2025/11/04 19:36:30 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ BLUE			:= 	\033[38;5;14m
 YELLOW			:=	\033[38;5;226m
 LIGHT_BLUE		:=	\033[38;5;14m
 RESET			:=	\033[38;5;7m
-PREFIX			=	[${LIGHT_BLUE}${NAME}${RESET}]	
+PREFIX			=	[${LIGHT_BLUE}${NAME}${RESET}]\t
 
 # ---------------------------------Compilation---------------------------------
 
@@ -29,18 +29,16 @@ RM			:=	@rm -f
 
 # --------------------------------Source files---------------------------------
 
-NAME		:=	sed
+NAME		:=	harl
 
-INCLUDES	:=	-I./includes
+SRCS		:=	main.cpp \
+				Harl.cpp
 
-FILES		:=	main.cpp
-
-SRCS		:=	$(addprefix srcs/, ${FILES})
-OBJS		:=	$(patsubst srcs%.cpp, objs%.o, ${SRCS})
+OBJS		:=	${SRCS:.cpp=.o}
 
 # -----------------------------------Rules-------------------------------------
 
-objs/%.o:	srcs/%.cpp
+%.o:	%.cpp
 	${CXX} ${CXXFLAGS} ${INCLUDES} -c $< -o $@
 	@echo "${PREFIX}Compilation of $<..."
 

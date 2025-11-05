@@ -6,22 +6,63 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 07:52:06 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 08:02:17 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/04 19:30:23 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <cstring>
+
+static std::string	file_to_str(std::string filename)
+{
+	std::ifstream		infile(filename.c_str());
+	std::stringstream	buffer;
+
+	if (infile.fail())
+	{
+		std::cerr << "Error with file opening" << std::endl;
+		return ("");
+	}
+	buffer << infile.rdbuf();
+	return (buffer.str());
+}
+
+std::string	&str_replace(std::string &str, std::string s1, std::string s2)
+{
+	size_t	pos;
+
+	pos = 0;
+	while ((pos = str.find(s1, pos)) != std::string::npos)
+	{
+		str.erase(pos, s1.length());
+		str.insert(pos, s2);
+		pos += s2.length();
+	}
+	return (str);
+}
 
 // ./sed [filename] [s1] [s2]
 int main(int argc, char const *argv[])
 {
 	
-	if (argc != 4)
+	if (argc != 4 || !strlen(argv[2]))
 	{
-		std::cout << "Wrong argument count" << std::endl;
-		std::cout << "Usage: ./sed <ilename> <s1> <s2>" << std::endl;
+		std::cerr << "Wrong argument count" << std::endl;
+		std::cerr << "Usage: ./sed <filename> <s1> <s2>" << std::endl;
 		return (1);
 	}
-	
+
+	std::string	file = file_to_str(argv[1]);
+
+	file = str_replace(file, argv[2], argv[3]);
+
+	std::string		outfilename(argv[1]);
+	outfilename.append(".replace");
+	std::ofstream	outfile(outfilename.c_str());
+	outfile << file;
+
 	return 0;
 }
