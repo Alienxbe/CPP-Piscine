@@ -6,11 +6,12 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 06:51:02 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 07:22:18 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/07 00:19:44 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include <string>
 
 class Weapon

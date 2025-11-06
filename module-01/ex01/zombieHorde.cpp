@@ -6,12 +6,12 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 06:15:31 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 06:24:41 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/07 00:10:39 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
+
 Zombie	*zombieHorde(int n, std::string name)
 {
 	Zombie	*horde;

@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 07:52:06 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/04 19:30:23 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/07 00:32:46 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <string>
 #include <cstring>
 
-static std::string	file_to_str(std::string filename)
+std::string	file_to_str(std::ifstream &infile)
 {
-	std::ifstream		infile(filename.c_str());
+	
 	std::stringstream	buffer;
 
 	if (infile.fail())
@@ -55,13 +55,20 @@ int main(int argc, char const *argv[])
 		return (1);
 	}
 
-	std::string	file = file_to_str(argv[1]);
+	std::ifstream	infile(argv[1]);
+	std::string		file = file_to_str(infile);
 
-	file = str_replace(file, argv[2], argv[3]);
+	if (infile.fail())
+		return (1);
 
 	std::string		outfilename(argv[1]);
 	outfilename.append(".replace");
 	std::ofstream	outfile(outfilename.c_str());
+
+	if (outfile.fail())
+		return (1);
+	
+	file = str_replace(file, argv[2], argv[3]);
 	outfile << file;
 
 	return 0;
