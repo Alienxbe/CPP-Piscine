@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 19:33:14 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/05 00:11:11 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/07 00:47:18 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
 	
 	if (argc != 2){
 		std::cout << "Wrong argument count" << std::endl;
-		std::cout << "Usage : ./karenFilter <level>" << std::endl;
+		std::cout << "Usage : ./harl <level>" << std::endl;
 		return (1);
 	}
 	harl.complain(argv[1]);
