@@ -6,36 +6,24 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 05:16:44 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/07 07:14:30 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/07 09:17:04 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iostream"
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
 	std::cout << "--- Constructor calls ---" << std::endl;
-	ClapTrap	ct1("Patrick");
-	ClapTrap	ct2("r2d2");
-	ClapTrap	ct3(ct1);
-	ct3 = ClapTrap("c3po");
+	FragTrap	ft1("Roland");
+	FragTrap	ft2("Paul");
 
 	std::cout << std::endl << "--- Actions ---" << std::endl;
-	for (int i = 0; i < 11; i++)
-	{
-		std::cout << i << ": ";
-		ct1.attack("r2d2");
-	}
+	ft1.highFivesGuys();
 
-	ct2.takeDamage(9);
-	ct2.attack("Patrick");
-	for (int i = 0; i < 11; i++)
-	{
-		std::cout << i << ": ";
-		ct2.beRepaired(1);
-	}
-
+	ft2.highFivesGuys();
+	ft1.highFivesGuys();
 	std::cout << std::endl << "--- Destructor calls ---" << std::endl;
 	return 0;
 }

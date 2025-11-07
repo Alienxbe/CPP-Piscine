@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 17:19:07 by marykman          #+#    #+#              #
-#    Updated: 2025/11/07 04:35:34 by marykman         ###   ########.fr        #
+#    Updated: 2025/11/07 07:45:27 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,11 @@ RM			:=	@rm -f
 
 # --------------------------------Source files---------------------------------
 
-NAME		:=	clapTrap
+NAME		:=	scavTrap
 
 SRCS		:=	main.cpp \
-				ClapTrap.cpp
+				ClapTrap.cpp \
+				ScavTrap.cpp
 
 OBJS		:=	${SRCS:.cpp=.o}
 

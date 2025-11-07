@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 05:17:03 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/07 07:17:34 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/07 07:18:14 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 class ClapTrap
 {
 	private:
+		ClapTrap(void);									// canonical form
+
+	protected:
 		std::string	_name;
 		int			_hp;
 		int			_energy;
 		int			_attack;
 
-		ClapTrap(void);									// canonical form
-	
 	public:
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const &other);				// canonical form
