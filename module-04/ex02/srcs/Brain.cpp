@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 16:34:55 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/09 16:59:31 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/09 18:22:38 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ Brain::Brain(void)
 	std::cout << "Brain default constructor called" << std::endl;
 }
 
-Brain::Brain(Brain const &other) : _ideas(other._ideas)
+Brain::Brain(Brain const &other)
 {
 	std::cout << "Brain copy constructor called" << std::endl;
+	*this = other;
 }
 
 Brain::~Brain()
