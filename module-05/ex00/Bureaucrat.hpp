@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:52:31 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/15 00:29:47 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:22:09 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 # define MAX_GRADE		150
 # define MIN_GRADE		1
-# define DEFAULT_NAME	"Default name"
-# define DEFAULT_GRADE	MAX_GRADE
 
 class Bureaucrat
 {
@@ -27,12 +25,14 @@ class Bureaucrat
 		std::string const	_name;
 		int					_grade;
 
+		// constructors
+		Bureaucrat(void);
+
 		// Setter
 		void	setGrade(int grade);
 
 	public:
 		// constructors
-		Bureaucrat(void);
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(Bureaucrat const &other);
 		~Bureaucrat();

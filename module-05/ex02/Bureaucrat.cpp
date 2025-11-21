@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:54:28 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/17 13:21:46 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/17 20:30:27 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,39 @@ void	Bureaucrat::incrementGrade(void)
 void	Bureaucrat::decrementGrade(void)
 {
 	setGrade(this->_grade + 1); // Lower grade is closer to 150 -> grade should increment
+}
+
+void	Bureaucrat::signForm(AForm &f) const
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << this->_name << " signed " << f.getName() << std::endl;
+	}
+	catch(const AForm::GradeTooLowException &e)
+	{
+		std::cout << this->_name << " couldn't sign "
+			<< f.getName()
+			<< " because "
+			<< e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::execForm(AForm const &f) const
+{
+	try
+	{
+		f.execute(*this);
+		std::cout << this->_name << " executed " << f.getName() << std::endl;
+	}
+	catch(std::exception const &e)
+	{
+		std::cout << this->_name << " couldn't execute "
+			<< f.getName()
+			<< " because "
+			<< e.what() << std::endl;
+	}
+	
 }
 
 ////// EXCEPTIONS //////

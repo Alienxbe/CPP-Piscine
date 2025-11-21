@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:52:31 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/17 13:24:39 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:13:28 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # define MAX_GRADE		150
 # define MIN_GRADE		1
@@ -48,7 +48,8 @@ class Bureaucrat
 		// Methods
 		void	incrementGrade(void);
 		void	decrementGrade(void);
-		void	signForm(Form &f);
+		void	signForm(AForm &f) const;
+		void	execForm(AForm const &f) const;
 
 		
 		// Exceptions

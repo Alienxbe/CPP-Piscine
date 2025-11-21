@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 13:57:23 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/17 13:34:05 by marykman         ###   ########.fr       */
+/*   Created: 2025/11/21 10:14:48 by marykman          #+#    #+#             */
+/*   Updated: 2025/11/21 10:17:30 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
-int main(void)
+#include "AForm.hpp"
+
+class Intern
 {
-	Bureaucrat	b("Bureaucrat", 5);
-	Form		f("LE PAPIER", 10, 15);
+	public:
+		Intern(void);
+		Intern(const Intern &other);
+		Intern &operator=(const Intern &rhs);
+		~Intern();
 
-	std::cout << b << std::endl;
-	std::cout << f << std::endl;
-	b.signForm(f);
-	std::cout << f << std::endl;
-	return (0);
-}
+		AForm	*makeForm(std::string name, std::string target);
+};
+
+#endif /* INTERN_HPP */

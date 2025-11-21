@@ -6,19 +6,13 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:54:28 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/16 23:12:45 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:02:25 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 ////// CONSTRUCTORS //////
-
-Bureaucrat::Bureaucrat(void) 
-	: _name(DEFAULT_NAME), _grade(DEFAULT_GRADE)
-{
-
-}
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 	: _name(name)
@@ -92,7 +86,7 @@ void	Bureaucrat::signForm(Form &f)
 	}
 	catch(const Form::GradeTooLowException &e)
 	{
-		std::cout << this->_name << " could'nt sign "
+		std::cout << this->_name << " couldn't sign "
 			<< f.getName()
 			<< " because "
 			<< e.what() << std::endl;

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 22:25:20 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/17 13:24:17 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:10:57 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 ////// CONSTRUCTORS //////
 
-Form::Form(std::string name, int const wgrade, int xgrade) :
+AForm::AForm(std::string name, int const wgrade, int xgrade) :
 	_name(name),
 	_signed(false),
 	_wgrade(wgrade),
@@ -27,7 +27,7 @@ Form::Form(std::string name, int const wgrade, int xgrade) :
 		throw GradeTooLowException();
 }
 
-Form::Form(Form const &other) :
+AForm::AForm(AForm const &other) :
 	_name(other._name),
 	_signed(other._signed),
 	_wgrade(other._wgrade),
@@ -36,36 +36,36 @@ Form::Form(Form const &other) :
 	
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	
 }
 
 ////// GETTER //////
 
-std::string const	&Form::getName(void) const
+std::string const	&AForm::getName(void) const
 {
 	return (this->_name);
 }
 
-bool	Form::isSigned(void) const
+bool	AForm::isSigned(void) const
 {
 	return (this->_signed);
 }
 
-int	Form::getWgrade(void) const
+int	AForm::getWgrade(void) const
 {
 	return (this->_wgrade);
 }
 
-int	Form::getXgrade(void) const
+int	AForm::getXgrade(void) const
 {
 	return (this->_xgrade);
 }
 
 ////// METHODS //////
 
-void Form::beSigned(Bureaucrat const &b)
+void AForm::beSigned(Bureaucrat const &b)
 {
 	if (b.getGrade() <= this->_wgrade)
 		this->_signed = true;
@@ -73,21 +73,35 @@ void Form::beSigned(Bureaucrat const &b)
 		throw GradeTooLowException();
 }
 
+void AForm::execute(Bureaucrat const &executor) const
+{
+	if (!this->_signed)
+		throw UnsignedFormException();
+	if (executor.getGrade() > this->_xgrade)
+		throw GradeTooLowException();
+	applyForm();
+}
+
 ////// EXCEPTIONS //////
 
-const char	*Form::GradeTooHighException::what() const throw()
+const char	*AForm::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too high!");
 }	
 
-const char	*Form::GradeTooLowException::what() const throw()
+const char	*AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low!");
 }
 
+const char *AForm::UnsignedFormException::what() const throw()
+{
+	return ("Form is not signed");
+}
+
 ////// FUNCTIONS //////
 
-std::ostream	&operator<<(std::ostream &o, Form const &f)
+std::ostream	&operator<<(std::ostream &o, AForm const &f)
 {
 	o << f.getName() << ", "
 		<< ((f.isSigned()) ? "signed" : "unsigned")

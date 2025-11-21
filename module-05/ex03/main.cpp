@@ -6,22 +6,31 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:57:23 by marykman          #+#    #+#             */
-/*   Updated: 2025/11/17 13:34:05 by marykman         ###   ########.fr       */
+/*   Updated: 2025/11/21 10:43:06 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
-	Bureaucrat	b("Bureaucrat", 5);
-	Form		f("LE PAPIER", 10, 15);
+	Intern		victime;
+	Bureaucrat	boss("boss", 1);
+	Bureaucrat	petitBoss("petit boss", 150);
+	AForm		*form;
 
-	std::cout << b << std::endl;
-	std::cout << f << std::endl;
-	b.signForm(f);
-	std::cout << f << std::endl;
+	form = victime.makeForm("presidential pardon", "Macron");
+	if (form)
+	{
+		boss.signForm(*form);
+		boss.execForm(*form);
+		petitBoss.execForm(*form);
+		delete form;
+	}
 	return (0);
 }
