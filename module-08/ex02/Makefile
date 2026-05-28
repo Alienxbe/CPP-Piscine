@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 17:19:07 by marykman          #+#    #+#              #
-#    Updated: 2026/03/31 14:50:30 by marykman         ###   ########.fr        #
+#    Updated: 2026/05/29 01:30:21 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,16 +23,15 @@ PREFIX			=	[${LIGHT_BLUE}${NAME}${RESET}]\t
 # ---------------------------------Compilation---------------------------------
 
 CXX			:=	@c++
-CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -Wconversion
+CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 
 RM			:=	@rm -f
 
 # --------------------------------Source files---------------------------------
 
-NAME		:=	serializer
+NAME		:=	mutantStack
 
-SRCS		:=	main.cpp \
-				Serializer.cpp \
+SRCS		:=	main.cpp
 
 OBJS		:=	${SRCS:.cpp=.o}
 

@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 02:28:10 by marykman          #+#    #+#             */
-/*   Updated: 2026/03/24 02:59:33 by marykman         ###   ########.fr       */
+/*   Updated: 2026/03/31 14:56:06 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(void)
 {
 	Data data;
 	data.x = 42;
-	data.y = 3.14;
+	data.y = 3;
 
 	// Original pointer
 	Data* original = &data;

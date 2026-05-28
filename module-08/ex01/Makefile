@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/08 17:19:07 by marykman          #+#    #+#              #
-#    Updated: 2026/03/31 14:50:30 by marykman         ###   ########.fr        #
+#    Updated: 2026/05/28 18:06:17 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,16 +23,16 @@ PREFIX			=	[${LIGHT_BLUE}${NAME}${RESET}]\t
 # ---------------------------------Compilation---------------------------------
 
 CXX			:=	@c++
-CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -Wconversion
+CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 
 RM			:=	@rm -f
 
 # --------------------------------Source files---------------------------------
 
-NAME		:=	serializer
+NAME		:=	span
 
 SRCS		:=	main.cpp \
-				Serializer.cpp \
+				Span.cpp
 
 OBJS		:=	${SRCS:.cpp=.o}
 
